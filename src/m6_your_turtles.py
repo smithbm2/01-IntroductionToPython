@@ -2,15 +2,15 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Braden Smith.
 """
 ########################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #   You should have RUN the  m5e_loopy_turtles  module and READ its code.
 #   (Do so now if you have not already done so.)
 #
@@ -28,3 +28,29 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 #
 ########################################################################
+import rosegraphics as rg
+window = rg.TurtleWindow()
+window.delay(25)
+kitty = rg.SimpleTurtle('turtle')
+kitty.pen = rg.Pen('orange',7)
+kitty.speed = 25
+size = 50
+for k in range (10):
+    kitty.draw_circle(size)
+    kitty.pen_up()
+    kitty.right(90)
+    kitty.forward(25)
+    kitty.left(90)
+    kitty.forward(25)
+    kitty.pen_down()
+    size=(size-18)/(k+1)**(1/5)
+cat = rg.SimpleTurtle('turtle')
+cat.pen = rg.Pen('black',9)
+cat.speed = 50
+size = 64.
+for k in range (16):
+    cat.draw_regular_polygon(3,size)
+    cat.left(90)
+    cat.forward(15+40*k)
+
+
